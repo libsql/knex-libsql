@@ -1,0 +1,47 @@
+# knex-libsql
+
+A [Knex][knex] dialect for [libSQL/sqld][sqld], using the [Hrana][hrana-client-ts] protocol over a WebSocket.
+
+[kysely]: https://github.com/knex/knex
+[sqld]: https://github.com/libsql/sqld
+[hrana-client-ts]: https://github.com/libsql/hrana-client-ts
+
+## Installation
+
+```shell
+npm install @libsql/knex-libsql
+```
+
+## Usage
+
+```javascript
+const Client_Libsql = require('@libsql/knex-libsql');
+const Knex = require("knex");
+
+const knex = Knex({
+    client: Client_Libsql,
+    connection: {
+            filename: "file:test.db",
+    },
+});
+```
+
+### URL
+
+The library accepts multiple URL schemas:
+
+- `ws://` and `wss://` (WebSockets)
+- `https://` and `libsql://` URLs `(Hrana over HTTP, with TLS)
+
+To use a JWT for authentication, you can use the `authToken` query parameter (for example,
+`libsql://localhost?authToken=<token>`).
+
+You can also pass a `file:` URL to use a local file, like `file:foo.db`
+
+## License
+
+This project is licensed under the MIT license.
+
+### Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in `@libsql/kysely-libsql` by you, shall be licensed as MIT, without any additional terms or conditions.
