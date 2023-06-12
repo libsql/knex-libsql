@@ -19,36 +19,20 @@
     "Glauber Costa <glauber@turso.tech>"
   ],
   "license": "MIT",
-  "type": "module",
-  "main": "lib-cjs/index.js",
-  "types": "lib-esm/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./lib-esm/index.d.ts",
-      "import": "./lib-esm/index.js",
-      "require": "./lib-cjs/index.js"
-    }
-  },
-  "files": [
-    "lib-cjs/**",
-    "lib-esm/**"
-  ],
+  "main": "index.js",
+  "files": ["index.js"],
   "scripts": {
-    "prepublishOnly": "npm run build",
-    "prebuild": "rm -rf ./lib-cjs ./lib-esm",
-    "build": "npm run build:cjs && npm run build:esm",
-    "build:cjs": "tsc -p tsconfig.build-cjs.json",
-    "build:esm": "tsc -p tsconfig.build-esm.json",
-    "postbuild": "cp package-cjs.json ./lib-cjs/package.json"
+    "test": "jest"
   },
   "dependencies": {
-    "@libsql/sqlite3": "^0.2.1",
-    "sqlite3": "^5.1.6"
+    "@libsql/sqlite3": "^0.3.1",
+    "sqlite3": "^5.1.5"
   },
   "peerDependencies": {
     "knex": "*"
   },
   "devDependencies": {
-    "typescript": "^4.9.4"
+    "jest": "^29.3.1",
+    "knex": "^2.4.2"
   }
 }
