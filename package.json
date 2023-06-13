@@ -1,6 +1,6 @@
 {
   "name": "@libsql/knex-libsql",
-  "version": "0.1.0-pre",
+  "version": "0.1.0-pre.1",
   "keywords": [
     "hrana",
     "libsql",
@@ -20,7 +20,8 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "files": ["index.js"],
+  "types": "index.d.ts",
+  "files": ["index.js", "index.d.ts"],
   "scripts": {
     "test": "jest"
   },
